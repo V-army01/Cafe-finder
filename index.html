@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafe Finder</title>
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<div class="wrap">
+    <h1>Find your perfect café</h1>
+    <p class="sub">Discover spots near your neighbourhood</p>
+
+    <div class="search-row">
+        <input type="text" id="areaInput"
+               placeholder="Enter your area — Malviya Nagar, C-Scheme, Bani Park…" />
+        <button onclick="doSearch()">Search</button>
+    </div>
+
+    <div class="filters">
+        <div class="fc">
+            <label>Min rating</label>
+            <select id="fRating">
+                <option value="">Any</option>
+                <option value="3">3+</option>
+                <option value="3.5">3.5+</option>
+                <option value="4">4+</option>
+                <option value="4.5">4.5+</option>
+            </select>
+        </div>
+        <div class="fc">
+            <label>Max price for 2</label>
+            <select id="fPrice">
+                <option value="">Any</option>
+                <option value="200">Under ₹200</option>
+                <option value="400">Under ₹400</option>
+                <option value="600">Under ₹600</option>
+                <option value="1000">Under ₹1000</option>
+            </select>
+        </div>
+        <div class="fc">
+            <label>Max distance — <span id="dv">5 km</span></label>
+            <div class="dist-row">
+                <input type="range" min="1" max="20" value="5" step="1" id="fDist"
+                       oninput="document.getElementById('dv').textContent = this.value + ' km'" />
+            </div>
+        </div>
+        <div class="fc">
+            <label>Sort by</label>
+            <select id="fSort" onchange="render()">
+                <option value="distance">Distance</option>
+                <option value="rating">Rating</option>
+                <option value="price">Price</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="res-bar">
+        <span id="resCount">Enter an area above to search</span>
+    </div>
+
+    <div class="grid" id="grid">
+        <div class="empty">Search for cafés in your area</div>
+    </div>
+</div>
+
+<div class="overlay" id="overlay" onclick="maybeClose(event)">
+    <div class="modal" id="mbox"></div>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>

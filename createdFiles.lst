@@ -1,0 +1,7 @@
+com\cafefinder\CafeFinderApplication.class
+com\cafefinder\model\Cafe.class
+com\cafefinder\repository\CafeRepository.class
+com\cafefinder\service\CafeService.class
+com\cafefinder\dto\CafeFilterRequest.class
+com\cafefinder\model\MenuItem.class
+com\cafefinder\model\TodaySpecial.class
